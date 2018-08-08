@@ -1,0 +1,159 @@
+body {
+  display: grid;
+  width: 100%;
+  min-width: 500px;
+  height: 900px;
+  position: relative;
+  margin: auto;
+  grid-template-areas: "header header header" "name name name" "browser content empty" "footer footer footer";
+  grid-template-columns: 200px minmax(500px, auto) 200px;
+  grid-template-rows: 30px 50px 100% 30px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #979ea8;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+.header h6 {
+  display: inline;
+  margin-right: 5px;
+}
+
+.name {
+  grid-area: name;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  margin-top: 30px;
+  display: flex;
+  background-color: #97a8a1;
+  border-bottom: 1px solid black;
+  font-family: "Montserrat", sans-serif;
+  padding: 3px;
+}
+.name h1 {
+  width: 25%;
+  height: 70%;
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.browser {
+  grid-area: browser;
+  background-color: #9c97a8;
+  font-family: "Montserrat", sans-serif;
+  padding: 0px 10px;
+  border-top: 1px solid black;
+}
+
+.content {
+  grid-area: content;
+  background-color: #e7efff;
+  font-family: "Montserrat", sans-serif;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+.content .container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 50px;
+  padding-left: 10px;
+  grid-row-gap: 10px;
+  grid-template-areas: "section" "form" "entries";
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 120px 100%;
+  /* This creates adjustable areas, but I don't think I maybe need it if I'm adding things organically?
+
+  		entry {
+  			grid-area: entry;
+  			padding: 10px;
+  			border: $border-thin;
+  			text-align: right;
+  			certical-align: middle;
+  		}
+  		.description {
+  			grid-area: description;
+  			padding: 10px;
+  			border: $border-thin;
+  		}
+  		*/
+}
+.content .container .section {
+  grid-area: section;
+  background-color: #9c97a8;
+  font-weight: bold;
+  margin-left: -10px;
+}
+.content .container .form {
+  border: 2px dashed gray;
+  grid-area: form;
+  grid-gap: 3px;
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "choices choices" "entryText entryInput" "descriptionText descriptionInput" "submit submit";
+}
+.content .container .form .choices {
+  grid-area: choices;
+  justify-self: center;
+  bottom-border: 1px;
+}
+.content .container .form .entryText {
+  grid-area: entryText;
+}
+.content .container .form .entryInput {
+  grid-area: entryInput;
+}
+.content .container .form .descriptionText {
+  grid-area: descriptionText;
+}
+.content .container .form .descriptionInput {
+  grid-area: descriptionInput;
+}
+.content .container .form .submit {
+  grid-area: submit;
+  justify-self: end;
+}
+.content .container .entries {
+  grid-area: entries;
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-flow: row;
+  grid-auto-rows: 50px;
+}
+
+.empty {
+  grid-area: empty;
+  background: linear-gradient(to right, #e7efff, #bfc4d1);
+  font-family: "Montserrat", sans-serif;
+  border-top: 1px solid black;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  background-color: #8283a8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid black;
+}
+.footer span {
+  display: block;
+  width: 400px;
+  margin: auto;
+}
+
+/*# sourceMappingURL=stylesheet.css.map */
