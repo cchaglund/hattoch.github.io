@@ -28,11 +28,10 @@ body {
 	grid-template-areas: 
 	"header header header"
 	"name name name"
-	"browser section section"
 	"browser content empty"
 	"footer footer footer";
 	grid-template-columns: 200px minmax(500px, auto) 200px;
-	grid-template-rows: 30px 50px 30px 100% 30px;
+	grid-template-rows: 30px 50px 100% 30px;
 }
 
 
@@ -96,25 +95,6 @@ body {
 	border-top: $border-thin;
 }
 
-.section {
-	grid-area: section;
-	display: flex;
-	z-index: 5;
-	background-color: #9c97a8;
-	@include font($font-family);
-	font-weight: bold;
-	margin-top: 5px;
-	
-	span {
-		display: inline-block;
-		height: 70%;
-		font-size: 14px;
-		margin-left: 10px;
-		
-		align-self: center;
-	}
-}
-
 .content {
 	grid-area: content;
 	background-color: #e7efff;
@@ -124,19 +104,38 @@ body {
 		display: grid;
 		
 		height: 100%;
-		padding-left: 20px;
+		padding-left: 10px;
 		padding-right: 10px;
-		margin-top: 10px;
 		grid-row-gap: 10px;
 		
 		grid-template-areas: 
+		"section"
 		"form"
 		"entries";
 		grid-template-columns: 1fr;
-		grid-template-rows: 120px 100%;
+		grid-template-rows: 30px 120px 100%;
 
 
-		
+		.section {
+			grid-area: section;
+			display: flex;
+			z-index: 5;
+			background-color: #9c97a8;
+			font-weight: bold;
+			margin-left: -12px;
+			margin-top: 5px;
+			border-top: $border-thin;
+			
+			border-bottom: $border-thin;
+			span {
+				display: inline-block;
+				height: 70%;
+				font-size: 14px;
+				margin-left: 10px;
+				
+				align-self: center;
+			}
+		}
 
 		.form {
 			border: 2px dashed gray;
@@ -230,13 +229,31 @@ body {
 				}
 			}
 		}
+/* This creates adjustable areas, but I don't think I maybe need it if I'm adding things organically?
+
+		entry {
+			grid-area: entry;
+			padding: 10px;
+			border: $border-thin;
+			text-align: right;
+			certical-align: middle;
+		}
+		.description {
+			grid-area: description;
+			padding: 10px;
+			border: $border-thin;
+		}
+		*/
+
 	}
 }
 
 .empty {
 	grid-area: empty;
 	background: linear-gradient(to right, #e7efff, #bfc4d1);
-	@include font($font-family);	
+	@include font($font-family);
+	border-top: $border-thin;
+	
 }
 
 .footer {

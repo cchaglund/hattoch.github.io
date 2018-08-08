@@ -1,13 +1,13 @@
 body {
   display: grid;
   width: 100%;
-  min-width: 500px;
+  min-width: 1000px;
   height: 900px;
   position: relative;
   margin: auto;
-  grid-template-areas: "header header header" "name name name" "browser content empty" "footer footer footer";
+  grid-template-areas: "header header header" "name name name" "browser section section" "browser content empty" "footer footer footer";
   grid-template-columns: 200px minmax(500px, auto) 200px;
-  grid-template-rows: 30px 50px 100% 30px;
+  grid-template-rows: 30px 50px 30px 100% 30px;
 }
 
 .header {
@@ -17,6 +17,7 @@ body {
   font-family: "Montserrat", sans-serif;
   position: fixed;
   display: block;
+  z-index: 6;
   width: 100%;
   height: 30px;
   border-bottom: 1px solid black;
@@ -30,9 +31,11 @@ body {
   grid-area: name;
   position: fixed;
   width: 100%;
+  min-width: 1000px;
   height: 50px;
   margin-top: 30px;
   display: flex;
+  z-index: 6;
   background-color: #97a8a1;
   border-bottom: 1px solid black;
   font-family: "Montserrat", sans-serif;
@@ -40,10 +43,11 @@ body {
 }
 .name h1 {
   width: 25%;
+  min-width: 1000px;
   height: 70%;
   display: block;
   text-align: center;
-  margin: auto;
+  margin: 0px auto;
 }
 
 .browser {
@@ -54,50 +58,48 @@ body {
   border-top: 1px solid black;
 }
 
+.section {
+  grid-area: section;
+  display: flex;
+  z-index: 5;
+  background-color: #9c97a8;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.section span {
+  display: inline-block;
+  height: 70%;
+  font-size: 14px;
+  margin-left: 10px;
+  align-self: center;
+}
+
 .content {
   grid-area: content;
   background-color: #e7efff;
   font-family: "Montserrat", sans-serif;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
 }
 .content .container {
   display: grid;
-  grid-auto-flow: row;
-  grid-auto-rows: 50px;
-  padding-left: 10px;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 10px;
+  margin-top: 10px;
   grid-row-gap: 10px;
-  grid-template-areas: "section" "form" "entries";
+  grid-template-areas: "form" "entries";
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 120px 100%;
-  /* This creates adjustable areas, but I don't think I maybe need it if I'm adding things organically?
-
-  		entry {
-  			grid-area: entry;
-  			padding: 10px;
-  			border: $border-thin;
-  			text-align: right;
-  			certical-align: middle;
-  		}
-  		.description {
-  			grid-area: description;
-  			padding: 10px;
-  			border: $border-thin;
-  		}
-  		*/
-}
-.content .container .section {
-  grid-area: section;
-  background-color: #9c97a8;
-  font-weight: bold;
-  margin-left: -10px;
+  grid-template-rows: 120px 100%;
 }
 .content .container .form {
   border: 2px dashed gray;
+  background-color: #dae1fa;
+  z-index: 5;
   grid-area: form;
   grid-gap: 3px;
   margin: auto;
   width: 50%;
+  min-width: 500px;
   padding: 5px;
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -127,18 +129,52 @@ body {
 }
 .content .container .entries {
   grid-area: entries;
+  height: 80%;
+  margin-top: 10px;
+}
+.content .container .entries .entry {
   display: grid;
-  grid-template-rows: 50px;
-  grid-template-columns: 1fr 3fr;
-  grid-auto-flow: row;
-  grid-auto-rows: 50px;
+  border-top: 2px dotted #dae1fa;
+  grid-template-rows: 20px 100px;
+  grid-template-columns: 1fr 1fr 14fr;
+  padding: 5px;
+  padding-top: 10px;
+  grid-gap: 5px;
+  grid-template-areas: "date type entryActual" "blank blank description";
+}
+.content .container .entries .entry .date {
+  grid-area: "date";
+  margin: 0px;
+  font-style: italic;
+  font-size: 12px;
+}
+.content .container .entries .entry .type {
+  grid-area: "type";
+  margin: 0px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.content .container .entries .entry .entryActual {
+  grid-area: "type";
+  margin: 0px;
+  font-weight: 700;
+  overflow: auto;
+}
+.content .container .entries .entry .blank {
+  grid-area: "blank";
+  visibility: hidden;
+  margin: 0px;
+}
+.content .container .entries .entry .description {
+  grid-area: "description";
+  margin: 0px;
+  overflow: auto;
 }
 
 .empty {
   grid-area: empty;
   background: linear-gradient(to right, #e7efff, #bfc4d1);
   font-family: "Montserrat", sans-serif;
-  border-top: 1px solid black;
 }
 
 .footer {

@@ -22,25 +22,26 @@
       <h1>Developer Diaries</h1>
     </div>
   	<div class="browser">
+     <h5>Chronological</h5>
      <h5>Java</h5>
      <h5>HTML</h5>
      <h5>CSS</h5>
      <h5>Sass</h5>
      <h5>JS</h5>
     </div>
+    <div class="section">
+      <span><b>Section</b></span>
+    </div>
   	<div class="content">
      <div class="container">
-      <div class="section">
-        Section
-      </div>
       <div class="form">
         <div class="choices">
           <form>
-            <input type="radio" name="type" value="Java">Java
-            <input type="radio" name="type" value="HTML">HTML
-            <input type="radio" name="type" value="CSS">CSS
-            <input type="radio" name="type" value="Sass">Sass
-            <input type="radio" name="type" value="JS">JS
+            <input type="radio" name="type" value="Java" id="radio1">Java
+            <input type="radio" name="type" value="HTML" id="radio2">HTML
+            <input type="radio" name="type" value="CSS" id="radio3">CSS
+            <input type="radio" name="type" value="Sass" id="radio4">Sass
+            <input type="radio" name="type" value="JS" id="radio5">JS
           </form>
         </div>
         <div class="entryText">
@@ -56,7 +57,8 @@
           </div>
           <div class="descriptionInput">
             <form>
-              <input type="text" name="description" size="40" id="descriptionInput">
+              <textarea id="descriptionInput" rows="1" cols="40"></textarea>
+              <!--<input type="text" name="description" size="40" id="descriptionInput">-->
             </form>
           </div>
           <div class="submit">
@@ -64,15 +66,7 @@
           </div>
       </div>
       <div class="entries" id="entries">
-        <!-- Entries go here -->
-        <span>Made a website</span>
-        <span>Took me about 15 years, but I've made another website!</span>
-        <span>Integrating languages</span>
-        <span>The website I made integrates html, css, sass, AND javascript! It's a fully functioning (albeit barebones) local website</span>
-        <span>hello</span>
-        <span>hello2</span>
-        <span>hello</span>
-        <span>hello2</span>
+        <!-- Entries made in js go here -->
       </div>
      </div> 
     </div>
