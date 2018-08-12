@@ -21,53 +21,42 @@
   	<div class="name">
       <h1>Developer Diaries</h1>
     </div>
-  	<div class="browser">
+  	
+
+    <div class="navigationBar" id="navigationBar">
+        <div id="navLinks">
+          <div class="link 1"><!--empty first line--></div>
+          <div class="link 2">Diaries</div>
+          <div class="link 3">Link</div>
+          <div class="link 4">Link</div>
+          <div class="link 5">Link</div>
+          <div class="link 6">Link</div>
+        </div>
+        <div id="navFlairParent">
+          <div id="navFlair1"></div>
+          <div id="navFlair2"></div>
+          <div id="navFlair3"></div>
+          <div id="navFlair4"></div>
+          <div id="navFlair5"></div>
+          <div id="navFlair6"></div>
+        </div>
+      </div>
+
+     <!--
      <h5>Chronological</h5>
      <h5>Java</h5>
      <h5>HTML</h5>
      <h5>CSS</h5>
      <h5>Sass</h5>
      <h5>JS</h5>
-    </div>
-    <div class="section">
-      <span><b>Section</b></span>
+      -->
+    
+    <div class="section" id="section">
+      <span>Section</span>
     </div>
   	<div class="content">
-     <div class="container">
-      <div class="form">
-        <div class="choices">
-          <form>
-            <input type="radio" name="type" value="Java" id="radio1">Java
-            <input type="radio" name="type" value="HTML" id="radio2">HTML
-            <input type="radio" name="type" value="CSS" id="radio3">CSS
-            <input type="radio" name="type" value="Sass" id="radio4">Sass
-            <input type="radio" name="type" value="JS" id="radio5">JS
-          </form>
-        </div>
-        <div class="entryText">
-          Entry:
-        </div>
-        <div class="entryInput">
-          <form>
-            <input type="text" name="entry" size="40" id="entryInput">
-          </form>
-        </div>
-          <div class="descriptionText">
-            Description: 
-          </div>
-          <div class="descriptionInput">
-            <form>
-              <textarea id="descriptionInput" rows="1" cols="40"></textarea>
-              <!--<input type="text" name="description" size="40" id="descriptionInput">-->
-            </form>
-          </div>
-          <div class="submit">
-            <button onclick="submitInput()">Submit</button>
-          </div>
-      </div>
-      <div class="entries" id="entries">
-        <!-- Entries made in js go here -->
-      </div>
+     <div class="container" id="contentContainer">
+      <!-- -->
      </div> 
     </div>
     <div class="empty"></div>
@@ -75,5 +64,6 @@
       <span>Christofer Haglund - All rights reserved 2018</span>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="NavigationBar.js"></script>
   </body>
 </html>

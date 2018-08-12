@@ -28,8 +28,8 @@ body {
 	grid-template-areas: 
 	"header header header"
 	"name name name"
-	"browser section section"
-	"browser content empty"
+	"navigationBar section section"
+	"navigationBar content empty"
 	"footer footer footer";
 	grid-template-columns: 200px minmax(500px, auto) 200px;
 	grid-template-rows: 30px 50px 30px 100% 30px;
@@ -70,12 +70,7 @@ body {
 	z-index: 6;
 	background-color: #97a8a1;
 	border-bottom: $border-thin;
-	
 	@include font($font-family);
-
-
-	padding: 3px;
-
 	h1 {
 		width: 25%;
 		min-width: 1000px;
@@ -87,14 +82,52 @@ body {
 	}
 }
 
-
-.browser {
+/* old navBar
+.navigationBar {
 	grid-area: browser;
 	background-color: #9c97a8;
 	@include font($font-family);
 	padding: 0px 10px;
 	border-top: $border-thin;
 }
+*/
+
+/* NAV */
+
+.navigationBar {
+	@include font($font-family);
+	background-color: #9c97a8;
+	display: grid;
+	grid-area: navigationBar;
+	margin: 0px;
+	padding: 0px;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 30px;
+	grid-template-areas: "navLinks navFlairParent";
+	#navLinks {
+		background-color: #9c97a8;
+		grid-area: navLinks;
+		display: grid;
+		grid-template-rows: repeat(6, 30px);
+		grid-template-columns: 1fr;
+		margin: 0px;
+		padding: 0px;
+		.link {
+			padding-top: 5px;
+			padding-left: 7px;
+		}
+	}
+	#navFlairParent {
+		grid-area: navFlairParent;
+		display: grid;
+		margin: 0px;
+		padding: 0px;
+		grid-template-rows: repeat(6, 30px);
+		grid-template-columns: 1fr;
+	}
+}
+
+/* end NAV */
 
 .section {
 	grid-area: section;
@@ -102,16 +135,14 @@ body {
 	z-index: 5;
 	background-color: #9c97a8;
 	@include font($font-family);
-	font-weight: bold;
-	margin-top: 5px;
+
 	
 	span {
+		visibility: hidden;
 		display: inline-block;
 		height: 70%;
 		font-size: 14px;
-		margin-left: 10px;
-		
-		align-self: center;
+		margin: 0px auto;
 	}
 }
 
@@ -139,8 +170,9 @@ body {
 		
 
 		.form {
-			border: 2px dashed gray;
+			border: 2px solid gray;
 			background-color: #dae1fa;
+			box-shadow: 3px 5px hsl(257, 15%, 70%);
 			z-index: 5;
 			grid-area: form;
 			grid-gap: 3px;
